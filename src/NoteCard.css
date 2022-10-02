@@ -1,0 +1,36 @@
+.wrapper {
+  background-color: white;
+  width: 300px;
+  height: 250px;
+  border-radius: 6px;
+  box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.25);
+}
+
+.content {
+  height: fill;
+  margin: 0.8rem;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.updated {
+  font-size: 0.7rem;
+  margin: 0.2rem 0rem 1rem 0rem;
+}
+
+.edit-text {
+  font-family: inherit;
+  font-size: 0.9rem;
+  border: none;
+  resize: none;
+  width: 97%;
+  height: 70%;
+}
+
+.edit-text:focus {
+  outline: none;
+}
