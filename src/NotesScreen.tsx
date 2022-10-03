@@ -9,6 +9,7 @@ function NotesScreen() {
   const [mostMentioned, setMostMentioned] = useState<User[]>([]);
   const [drag, setDrag] = useState('');
 
+  // Fetching the notes
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch('https://challenge.leadjet.io/cph/notes');
@@ -23,6 +24,7 @@ function NotesScreen() {
     }
   }, []);
 
+  //Fetching the most mentioned users
   useEffect(() => {
     const fetchMostMentioned = async () => {
       const data = await fetch(
@@ -45,6 +47,7 @@ function NotesScreen() {
     }
   }, []);
 
+  // Fetching all users
   useEffect(() => {
     const fetchUsers = async () => {
       const data = await fetch('https://challenge.leadjet.io/users');
@@ -65,6 +68,7 @@ function NotesScreen() {
     }
   }, []);
 
+  // Posting new note
   const addNote = async () => {
     const newNote = await fetch('https://challenge.leadjet.io/cph/notes', {
       method: 'POST',
@@ -78,6 +82,7 @@ function NotesScreen() {
     setNotes((prevState) => [...prevState, { id: jsonNewNote.id, body: '' }]);
   };
 
+  // Dealing with drag event
   const onDrag = (e: DragEvent, user: User) => {
     e.preventDefault();
     setDrag(`@[${user.display}](${user.id})`);

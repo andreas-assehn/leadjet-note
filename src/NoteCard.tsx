@@ -14,6 +14,7 @@ function NoteCard({
 }) {
   const [text, setText] = useState(note.body);
 
+  // Updating note
   useEffect(() => {
     const updated = { body: text };
     const delayPutRequest = setTimeout(async () => {
@@ -30,6 +31,7 @@ function NoteCard({
     return () => clearTimeout(delayPutRequest);
   }, [text, note.id]);
 
+  // Dealing with drop event
   const onDrop = () => {
     setText((prevState) => `${prevState}${drag}`);
   };
