@@ -27,10 +27,18 @@
   font-size: 0.9rem;
   border: none;
   resize: none;
-  width: 97%;
   height: 70%;
 }
 
-.edit-text:focus {
+textarea {
+  border: none;
+  width: 97%;
+}
+
+textarea:focus {
   outline: none;
+}
+
+strong {
+  color: rgb(145, 67, 255);
 }
